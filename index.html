@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+  	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>	
+
+	<title>LingoSphere</title>
+	<link rel="icon" type="image/png" href="languages.png">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body ng-app>
+
+<header>
+	<!-- Верхня полоска -->
+	<div class="row text-center align-items-center display-flex justify-content-center top-line">
+    	<div class="col-1 a">
+      		<img src="user.png" style=" width: 20px; margin-right: 3px;" ><b style="text-decoration: underline;">  Реєстрація</b>
+    	</div>
+    	<div class="col-10 b">
+    		<i>ВІДГУКИ</i> <i><a href="#footer" class="link-dark">БЛОГ</a></i> <i><a href="#about" class="link-dark">ПРО НАС</a></i> <i><a href="#footer" class="link-dark">КОНТАКТИ</a></i> <i>ПРОБНИЙ УРОК</i> <i>ТЕСТ НА РІВЕНЬ ЗНАННЯ МОВИ</i>
+    	</div>
+    	<div class="col-1 c">
+    		<select class="form-select lang" aria-label="Default select example">
+  				<option value="1">🇺🇦Укр</option>
+  				<option value="3">🇬🇧Eng</option>
+			</select>
+    	</div>
+    </div>
+    <!-- Пріорітети -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade head-info">
+  <div class="carousel-inner">
+  	<center><h1 style="position: absolute; font-size: 29px; margin-left: 42%;"><i><u>Наші пріоритети:</u></i></h1></center>
+    <div class="carousel-item active s1">
+    	<div class="item1">
+    		<center>
+    			<img src="https://static.wixstatic.com/media/56263d_5329505c92e545438a5fad59bdef5d97~mv2.png/v1/fill/w_235,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5293-removebg-preview_edited.png" class="head-img" style="width: 170px; height: 135px; object-fit: cover; object-position: 50% 50%;">
+    		<p style="font-size: 25px; font-weight: 600;">Якість</p> <p style="font-size: 20px;">Ми продовжуємо працювати над своєю освітою протягом<br> всієї  кар'єри, маємо міжнародні сертифікати</p>
+    		</center>
+    	</div>
+      	<div class="item2">
+      		<center>
+      			<img src="https://static.wixstatic.com/media/56263d_46077096ef354af08bf2321213f8e4ec~mv2.png/v1/fill/w_303,h_144,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5514-removebg-preview_edited_edited.png" class="head-img" style="width: 284px; height: 135px; object-fit: cover; object-position: 50% 50%;">  
+      		<p style="font-size: 25px; font-weight: 600;">Комфорт</p> <p style="font-size: 20px;">Наші педагоги є психологами і за освітою, і за покликанням. <br> Ми вміємо знайти спільну мову абсолютно з усіма студентами</p>
+      		</center>
+      	</div>      
+      </div>
+
+    <div class="carousel-item s2">
+    	<div class="item3">
+    		<center>
+    			<img src="https://static.wixstatic.com/media/56263d_be75f022c3ac44ef868390bd9cf4d1eb~mv2.png/v1/fill/w_235,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5836-removebg-preview.png" class="head-img" style="width: 188px; height: 149px; object-fit: cover; object-position: 50% 50%;">
+    		<p style="font-size: 25px; font-weight: 600;">Самовираження</p> <p style="font-size: 20px;">ми даємо можливість кожному учневі відкрити заповітну <br> мрію, почати розуміти пісні і фільми мовою оригіналу, <br> виразити себе за допомогою нового і такого сильного <br> інструменту, як мова</p>
+    		</center>
+    	</div>
+      	<div class="item4">
+      		  <center>
+    			<img src="https://static.wixstatic.com/media/56263d_d0ec2d4ad81149ec931defb4cfebceab~mv2.png/v1/fill/w_235,h_186,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/13258-removebg-preview.png" class="head-img" style="width: 188px; height: 149px; object-fit: cover; object-position: 50% 50%;" >
+    		<p style="font-size: 25px; font-weight: 600;">Повага</p> <p style="font-size: 20px;">психологічний комфорт, спокій, безоціночність - це ті базові <br> фактори, які впливають безпосередньо на освітній процес. <br> Ми забезпечуємо ці фактори людям вже 10 років</p>
+    		</center>
+      	</div>      
+      </div>
+  </div>
+
+  <button class="carousel-control-prev btn1" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span aria-hidden="true"><img src="left.png" style="display: inline-block;width:4.5rem;height: 4.5rem;background-repeat: no-repeat;background-position: 50%;background-size: 100% 100%;"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next btn2" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span aria-hidden="true"><img src="right.png" style="display: inline-block;width:4.5rem;height: 4.5rem;background-repeat: no-repeat;background-position: 50%;background-size: 100% 100%;"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</header>
+<main>
+	<!-- Про онлайн платформу -->
+	<div class="row about" style=" width: 110wh;"><a name="about"></a>
+	<center><h1 style="position: absolute; font-size: 29px; margin-left: 10%;"><i><u>Наша онлайн платформа:</u></i></h1></center>
+	<div class="col-5">
+		<div class="a-box" style=" margin-left: 13%; margin-top: 12%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Всі матеріали в одному місці</li>
+			<p style="font-size: 17px; margin-top: 11px;">Більше не потрібні зошити, підручники і словники. <br> Всі уроки та інтерактивні д / з на платформі.</p>
+			</ul>
+		</div>
+		<div class="a-box" style=" margin-left: 13%; margin-top: 9%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Заняття з будь-якого пристрою</li>
+			<p style="font-size: 17px; margin-top: 11px;">Виконуйте вправи з будь-якого пристрою в будь-який <br> зручний час, потрібний тільки інтернет.</p>
+			</ul>
+		</div>
+		<div class="a-box" style=" margin-left: 13%; margin-top: 9%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Персональний словник</li>
+			<p style="font-size: 17px; margin-top: 11px;">Просто виділи слово, щоб додати в особистий словник. <br> Потім відроби в будь-якому з 5 видів вправ.</p>
+			</ul>
+		</div>
+		<div class="a-box" style=" margin-left: 13%; margin-top: 9%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Інтерактивні вправи</li>
+			<p style="font-size: 17px; margin-top: 11px;">Більше 30 видів закріплення нового матеріалу <br> і захоплююча подача нового.</p>
+			</ul>
+		</div>
+		<div class="a-box" style=" margin-left: 13%; margin-top: 9%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Адаптивна програма</li>
+			<p style="font-size: 17px; margin-top: 11px;">Більше 1000 написаних уроків і можливість <br> комбінувати уроки так, як цікаво тобі. <br> Загальна англійська + Бізнес + Подорожі.</p>
+			</ul>
+		</div>
+		<div class="a-box" style=" margin-left: 13%; margin-top: 9%;">
+			<ul>
+				<li style="font-size: 25px; font-weight: 501;">Моніторинг евективності</li>
+			<p style="font-size: 17px; margin-top: 11px;">Ви завжди можете бачити скільки уроків ви пройшли, <br> скільки вивчили нових слів і яку тему засвоїли краще, <br> а яку потрібно повторити.</p>
+			</ul>
+		</div>
+	</div>
+	<div class="col-7">
+		<img src="us.png" style="position: relative; width: 887px; height: 843;">
+		<div class="a-box" style=" margin-left: 100px; margin-top: 29px;">
+			<ul>
+				<li style="font-size: 27px; font-weight: 501;">Внутрішній відеозв'язок</li>
+			<p style="font-size: 19px; margin-top: 11px;">Ніяких Zoom або Skype. Все навчання в одному місці, <br> весь прогрес і потрібні матеріали завжди під рукою!</p>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<!-- Вибір мов -->
+<div class="lang-choose">
+		<center>
+		<h1 style="position: absolute; font-size: 29px; margin-left: 38%; padding-top: 2%;"><i><u>Оберіть мову для навчання:</u></i></h1>
+	<form action="#">
+		<div class="row" style="padding-top: 7%; margin-left: 21%; margin-right: 21%; font-size: 18px;">
+			<div class="col-2">
+				🇬🇧 Англійська<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="GBEng">
+			</div>
+			<div class="col-2">
+				🇺🇸 Англійська<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="USAEng">
+			</div>
+			<div class="col-2">
+				🇩🇪 Німецька<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="Ger">
+			</div>
+			<div class="col-2">
+				🇫🇷 Французька<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="Fre">
+			</div>
+			<div class="col-2">
+				🇵🇱 Польська<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="Pol">
+			</div>
+			<div class="col-2">
+				🇪🇸 Іспанська<br><input style="width: 16px; height: 16px;" type="radio" ng-model="info" value="Span">
+			</div>
+		</div>	
+	</form>
+
+	<!-- Видача курсів залежно від мови -->
+	<div ng-switch="info" style="padding-top: 35px;">
+																			<!-- 							GREAT BRITAIN -->
+		<div ng-switch-when="GBEng">					
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+			<form action="#" style="padding-top: 30px;"> 
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="form" value="individual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio2" id="btnradio2" autocomplete="off" ng-model="form" value="group">
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="form" value="self">
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="form">
+				<div ng-switch-when="individual"><!--  ІНДИВІДУАЛЬНА БРИТАНСЬКА АНГЛІЙСЬКА   -->
+
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з Британії та Кенії</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind2.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Англійська для IT</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">З любов'ю від айтівців для айтівців</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Викладачі топ-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Розмовні клуби в подарунок</p>
+											<p class="card-text" style="font-size: 19px;">✅ Оформлення профілю LinkedIn</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний трекінг результатів</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особливий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    
+
+							  </div>
+							</div>
+						</div>
+						
+						
+					</div>	
+				</div>
+
+				<div ng-switch-when="group">  <!--   ГРУПОВА БРИТАНСЬКА АНГЛІЙСЬКА-->
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="self"> <!-- САМОСТІЙНА БРИТАНСЬКА АНГЛІЙСЬКА-->
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	 	</div>
+		<!-- 																						UNITED STATES OF AMERICA								 -->
+		<div ng-switch-when="USAEng"> 
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+	 		<form action="#" style="padding-top: 30px;">
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="USAEng" value="usaindividual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" ng-model="USAEng" value="usagroup">
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="USAEng" value="usaself">
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="USAEng">
+				<div ng-switch-when="usaindividual">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з США та Канади</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind2.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Англійська для IT</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">З любов'ю від айтівців для айтівців</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Викладачі топ-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Розмовні клуби в подарунок</p>
+											<p class="card-text" style="font-size: 19px;">✅ Оформлення профілю LinkedIn</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний трекінг результатів</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особливий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    
+
+							  </div>
+							</div>
+						</div>
+						
+						
+					</div>	
+				</div>
+				<div ng-switch-when="usagroup">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="usaself">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	 	</div>
+	 	<!-- 																			GERMAN						 -->
+		<div ng-switch-when="Ger"> 
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+	 		<form action="#" style="padding-top: 30px;">
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="ger" value="gerindividual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" ng-model="ger" value="gergroup">
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="ger" value="gerself" disabled>
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="ger">
+				<div ng-switch-when="gerindividual">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з Німеччини та Австрії</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						
+						
+					</div>	
+				</div>
+				<div ng-switch-when="gergroup">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="gerself">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	 	</div>
+		<!-- 																				FRENCE								 -->
+		<div ng-switch-when="Fre">
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+	 		<form action="#" style="padding-top: 30px;">
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="Fre" value="Freindividual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" ng-model="Fre" value="Fregroup" disabled>
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="Fre" value="Freself">
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="Fre">
+				<div ng-switch-when="Freindividual">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з Франції та Бельгії</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div ng-switch-when="Fregroup">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="Freself">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 																								POLAND				 -->
+		<div ng-switch-when="Pol">
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+			<form action="#" style="padding-top: 30px;">
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="Pol" value="polindividual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" ng-model="Pol" value="polgroup">
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="Pol" value="polself">
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="Pol">
+				<div ng-switch-when="polindividual">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з Польші та України</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+				<div ng-switch-when="polgroup">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="polself">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 																							SPAIN									 -->
+		<div ng-switch-when="Span">
+			<h1 style="position: absolute; font-size: 29px; margin-left: 35%;"><i><u>Оберіть бажану форму навчання:</u></i></h1>
+			<form action="#" style="padding-top: 30px;">
+				<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="padding-top: 30px; width: 46%; height: 70px;">
+  				<input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" ng-model="Span" value="spanindividual">
+  				<label class="btn btn-outline-primary" for="btnradio1">Індивідуальне навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" ng-model="Span" value="spangroup" disabled>
+ 				<label class="btn btn-outline-primary" for="btnradio2">Групове навчання</label>
+
+ 				<input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" ng-model="Span" value="spanself">
+ 				<label class="btn btn-outline-primary" for="btnradio3">Самостійне навчання</label>
+			</div>
+			</form>
+			<div ng-switch="Span">
+				<div ng-switch-when="spanindividual">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Індивідуальні заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче особливий підхід</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 249 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind1.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind4.png" style="width: 95%; border-radius: 0px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Заняття з носієм</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто хоче розмовляти як нейтів</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Персональний менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Можливість змінювати графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Сертифікат по закінченню курсу</p>
+											<p class="card-text" style="font-size: 19px;">✅ Носії мови з Мексики та Аргентини</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 295 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="row" style="padding-top: 35px; margin-left: 3%; margin-right: 3%; display: flex; align-items: center;">
+						<div class="col-12 card-back" >
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px; padding-top: -40px;">
+							  <div class="row g-0">
+							  	
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Premium-навчання</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, кому потрібен максимальний комфорт</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Розмовні клуби</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особистий менеджер</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний графік</p>
+											<p class="card-text" style="font-size: 19px;">✅ Викладачі premium-рівня</p>
+											<p class="card-text" style="font-size: 19px;">✅ Індивідуальний план навчання</p>
+											<p class="card-text" style="font-size: 19px;">✅ Вибір з 187 програм LingoSphere</p>
+											<p class="card-text" style="font-size: 19px;">✅ Особилий сертифікат по закінченню курсу</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 448 грн / урок 50 хвилин</p>
+							      </div>
+							    </div>    
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="ind3.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+							  </div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div ng-switch-when="spangroup">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							      	<div style="margin-left: -37px; margin-top: 10px; font-size: 14px; color: white; width: 170px; height: 28px; font-weight: 600; background-color: red; position: absolute; transform: rotate(325deg); border-radius: 36% 36% 8% 8%; display: flex; align-items: center; justify-content: center;">
+							      		<b>ПОПУЛЯРНИЙ</b>
+							      	</div>
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Абонемент</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 12 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Немає ліміту на відвідування</p>
+											<p class="card-text" style="font-size: 19px;">✅ Багато цікавих тем для обговорення</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень урок веде носій мови</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 1 490 грн / місяць</p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group1.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+										<br>
+						<div class="col-12 card-back" style="padding-top: 35px;">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							  	
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="group2.png" style="width: 95%; border-radius: 20px;">
+							    </div>
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">Групове заняття</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для тих, хто полюбляє жваві розмови</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Групи до 8 людей</p>
+											<p class="card-text" style="font-size: 19px;">✅ Персональний куратор</p>
+											<p class="card-text" style="font-size: 19px;">✅ Ранкові, денні та вечірні групи</p>
+											<p class="card-text" style="font-size: 19px;">✅ 3 заняття на тиждень по 90 хв</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до інтеративної платформи</p>
+							        <p style="font-size: 20px; font-weight: 600;">Від 215 грн / урок 90 хвилин</p>
+							      </div>
+							    </div>    
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-switch-when="spanself">
+					<div class="row" style="padding-top: 45px; margin-left: 3%; margin-right: 3%;">
+
+						<div class="col-12 card-back">
+							<div class="card mb-3" style="max-width: 94%; border-radius: 14px;">
+							  <div class="row g-0">
+							    
+							    <div class="col-md-7">
+							      <div class="card-body">
+							        <h5 class="card-title"><i style="font-weight: 600; font-size: 24px; padding-left: 20px;">LVL Booster</i></h5>
+							        <p><i style="font-weight: 600; font-size: 20px;">Для поціновувачів вільного графіку</i></p>
+							        <p class="card-text" style="font-size: 19px;">✅ Особистий словник</p>
+											<p class="card-text" style="font-size: 19px;">✅ Раз на тиждень додаємо нові теми</p>
+											<p class="card-text" style="font-size: 19px;">✅ Регулярна перевірка домашнього завдання від вчителя</p>
+											<p class="card-text" style="font-size: 19px;">✅ Доступ до платформи з будь якого присторою протягом року</p>
+							        <p style="font-size: 20px; font-weight: 600;">1 499 грн / 1 рік </p>
+							      </div>
+							    </div>
+							    <div class="col-md-5" style="display: flex; align-items: center; justify-content: center;">
+							      <img src="self.jpg" style="width: 95%; border-radius: 20px;">
+							    </div>
+
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</center>
+</div>
+
+</main>
+<a name="footer">
+</a>
+<footer style="height: 30vh; padding-left: 6%; padding-right: 6%; background-image: linear-gradient(to bottom left, #90d4b5, #d4c9d4, #b88ab8); box-shadow: 0 0 20px 10px #d4c9d4;" class="row"> <i style="font-size: 26px; font-weight: 600; margin-left: 23%; margin-top: 0.5%; height: 30px;">Наш контент</i>
+<i style="font-size: 26px; font-weight: 600; margin-left: 67%; margin-top: -3%; height: 30px;">Зв'язатись</i>
+<div>
+	<img src="instagram.png" style="width: 50px; margin-left: 23.3%; margin-top: -2.5%;">
+  <img src="facebook.png" style="width: 50px; margin-left: 5.6%; margin-top: -2.5%; border-radius: 10px;">	
+</div>
+<img src="youtube.png" style="position: absolute; width: 5.2%; height: 7.3%; margin-top: 6.5%; margin-left: 24.5%;">
+<div>
+	<img src="twitter.png" style="width: 50px; margin-left: 23.3%; margin-top: 2%; border-radius: 10px;">
+	<img src="tiktok.png" style="width: 50px; margin-left: 5.6%; margin-top: 2%;">
+</div>
+<div style="position: absolute;">
+	<p><img src="tg.png" style="width: 50px; margin-left: 59.8%; margin-top: 3.8%;">
+		<img src="viber.png" style="width: 50px; margin-left: 5%; margin-top: 3.8%;">
+</div>
+<div style="position: absolute;">
+	<img src="phone.png" style="width: 50px; margin-left: 64.2%; margin-top: 6.8%;">
+</div>
+<div style="position: absolute;">
+	<p><img src="whatsapp.png" style="width: 50px; margin-left: 59.8%; margin-top: 10.2%;">
+		<img src="gmail.png" style="width: 50px; margin-left: 5%; margin-top: 10.2%;">
+</div>
+<div style="position: absolute; padding-left: 41%; padding-top: 12%;">
+	<span style="font-size: 25px; font-weight: 600;">
+		©<span style="color: #f7a43e;">Lingo</span><span style="color: #2fc904;">Sphere</span>
+	</span>
+</div>
+
+<!-- 
+			
+		</div>
+		<div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+			<div style="width: 100%;">
+				<i style="font-size: 26px; font-weight: 600;">Зв'язатись</i>
+			</div>
+			 <p><img src="tg.png" style="width: 50px;"><img src="viber.png" style="width: 50px;"></p>
+			<p><img src="whatsapp.png" style="width: 50px;"><img src="gmail.png" style="width: 50px;"></p>
+		</div>
+	</div>
+ -->
+</footer>
+
+	
+	<script src="app.js"></script>
+</body>
+</html>
