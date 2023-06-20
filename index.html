@@ -41,9 +41,9 @@
 	<!-- Верхня полоска -->
 	<div class="row text-center align-items-center display-flex justify-content-center top-line">
     	<div class="col-1 a" style="width: 199px;">
-    		<a href="#re">
+    		<a class="link-light" href="#re">
     			<div style="" class="testl">
-    			<i style="font-weight: 620; color: #f4f4f4; font-size: 16.7px;">ПРОБНИЙ УРОК</i>
+    			<i style="font-weight: 620; color: #f4f4f4; font-size: 16.7px; ">ПРОБНИЙ УРОК</i>
     		</div>
       		</a>
     	</div>
@@ -1624,74 +1624,129 @@
 		 <div class="col-4" style="padding-top: 5%; padding-left: 5.6%;">
 		 	<div style="padding-top: 13.2px; height: 50%;">
 		 		<span style="font-size: 17.8px;">Ваше ім'я</span><br>
-		 	<input type="text" class="finles"><br>
+		 	<input type="text" class="finles" style="border-color: #5dfcb1;" placeholder="Ім'я"><br>
 		 	</div>
 		 	<div style="padding-top: 3px; height: 50%;">
 		 		<span style="font-size: 17.8px;">Телефон</span><br>
-		 		<input type="text" class="finles"></div>
+		 		<input type="text" class="finles" style="border-color: #5dfcb1;" placeholder="+380 (99) 999-99-99"></div>
 		 	</div>		 	
 		 <div class="col-4" style="padding-top: 5%; padding-left: 5.6%;">
-		 	<span style="font-size: 17.8px;">Email</span><br>
-		 	<input type="text" class="finles"><br>
-		 	<span style="font-size: 17.8px;">Для кого?</span><br>
-		 	<select name="" id="" class="finles"></select>
+		 	<div style="padding-top: 13.2px; height: 50%;">
+		 		<span style="font-size: 17.8px;">Email</span><br>
+		 		<input type="text" class="finles" style="border-color: #d57bd5;" placeholder="elonmusk@gmail.com"><br>
+		 	</div>
+		 	<div style="padding-top: 3px; height: 50%;">
+		 		<span style="font-size: 17.8px;">Для кого?</span><br>
+		 		<select class="form-select lang finles" aria-label="Default select example" style="border-color: #5dfcb1;">
+		 			<option selected>Оберіть...</option>
+  				<option value="1">Навчання для дорослого</option>
+  				<option value="2">Навчання для дитини (4-7)</option>
+  				<option value="3">Навчання для дитини (8-11)</option>
+  				<option value="4">Навчання для дитини (12-17)</option>
+		 		</select>
+		 	</div>		 	
 		 </div>
-		 <div class="col-4" style="background-color: red; ">
-		 	<span style="font-size: 17.8px;">Яка мова?</span><br>
-		 	<select name="" id="" class="finles"></select><br>
-		 	<span style="font-size: 17.8px;">Яка форма навчання?</span><br>
-		 	<select name="" id="" class="finles"></select><br>
-		 </div>
+
+		 <div class="col-4" style="padding-top: 5%; padding-left: 5.6%;">
+		 	<form action="#">
+				<input type="radio" class="btn-check" id="10" autocomplete="off" ng-model="fb" value="fbo" > 
+			 	<label class="btn testf" for="10"><i>Записатися на пробний урок</i></label>
+			</form>
+			<div ng-switch="fb">
+				<div ng-switch-when="fbo">
+					<div style="position: absolute; margin-top: -44px; margin-left: 279px; font-size: 25px;">
+						✅
+					</div>
+				</div>
+			</div>
+		 	<div style="padding-top: 13.2px; height: 50%;">
+		 		<span style="font-size: 17.8px;">Яка мова?</span><br>
+		 		<select class="form-select lang finles" aria-label="Default select example" style="border-color: #d57bd5;">
+		 			<option selected>Оберіть...</option>
+  				<option value="1">Англійська 🇬🇧</option>
+  				<option value="2">Англійська 🇺🇸</option>
+  				<option value="3">Німецька 🇩🇪</option>
+  				<option value="4">Французька 🇫🇷</option>
+  				<option value="4">Польська 🇵🇱</option>
+  				<option value="4">Іспанська 🇪🇸</option>
+		 		</select>
+		 	</div>	
+		 	<div style="padding-top: 3px; height: 50%;">
+		 		<span style="font-size: 17.8px;">Яка форма навчання?</span><br>
+		 		<select class="form-select lang finles" aria-label="Default select example" style="border-color: #d57bd5;">
+		 			<option selected>Оберіть...</option>
+  				<option value="1">Індивідуальна 🙍‍</option>
+  				<option value="2">Групова 👨‍👩‍👧‍👦</option>
+  				<option value="3">Самостійна 💻</option>
+		 		</select>
+		 	</div>	
 	</div>
 </div>
 
 </main>
 <a name="footer">
 </a>
-<footer style="height: 30vh; padding-left: 6%; padding-right: 6%; background-image: linear-gradient(to bottom left, #90d4b5, #d4c9d4, #b88ab8); box-shadow: 0 0 20px 10px #d4c9d4;" class="row"> 
+<footer style="height: 24vh; padding-left: 6%; padding-right: 6%; background-image: linear-gradient(to bottom left, #90d4b5, #d4c9d4, #b88ab8); box-shadow: 0 0 20px 10px #d4c9d4;"> 
+	<div class="row" style="width: 94%; padding-left: 7%;">
+		<div class="col-5" style="display: flex; justify-content: center; padding-top: 6.2%;">
+			<span style="font-size: 25px; font-weight: 510; margin-top: -3.2%; position: absolute; text-decoration: underline; color: #000000b5;">Наш контент:</span>
+			<div class="row">
+				<div class="col-1">
 
-	<i style="font-size: 26px; font-weight: 600; margin-left: 23%; margin-top: 0.5%; height: 30px;">Наш контент</i>
-<i style="font-size: 26px; font-weight: 600; margin-left: 67%; margin-top: -3%; height: 30px;">Зв'язатись</i>
-<div>
-	<img src="languages.png" style="width: 68px; position: absolute; margin-left: 42.5%; margin-top: 2.8%;">
-	<img src="instagram.png" style="width: 50px; margin-left: 23.3%; margin-top: -2.5%;">
-  <img src="facebook.png" style="width: 50px; margin-left: 5.6%; margin-top: -2.5%; border-radius: 10px;">	
-</div>
-<img src="youtube.png" style="position: absolute; width: 5.2%; height: 7.3%; margin-top: 6.5%; margin-left: 24.5%;">
-<div>
-	<img src="twitter.png" style="width: 50px; margin-left: 23.3%; margin-top: 2%; border-radius: 10px;">
-	<img src="tiktok.png" style="width: 50px; margin-left: 5.6%; margin-top: 2%;">
-</div>
-<div style="position: absolute;">
-	<p><img src="tg.png" style="width: 50px; margin-left: 59.8%; margin-top: 3.8%;">
-		<img src="viber.png" style="width: 50px; margin-left: 5%; margin-top: 3.8%;">
-</div>
-<div style="position: absolute;">
-	<img src="phone.png" style="width: 50px; margin-left: 64.2%; margin-top: 6.8%;">
-</div>
-<div style="position: absolute;">
-	<p><img src="whatsapp.png" style="width: 50px; margin-left: 59.8%; margin-top: 10.2%;">
-		<img src="gmail.png" style="width: 50px; margin-left: 5%; margin-top: 10.2%;">
-</div>
-<div style="position: absolute; padding-left: 41%; padding-top: 12%;">
-
-	<span style="font-size: 28px; font-weight: 600; padding-top: -20%;">
-		<span style="color: #cf7d19;">Lingo</span><span style="color: #2fc904;">Sphere</span>
-	</span>
-</div>
-
-<!-- 
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://instagram.com/lingo_sphere?igshid=ZDc4ODBmNjlmNQ=="><img src="https://thumb.tildacdn.com/tild3638-6437-4239-b763-356237613934/-/format/webp/Group.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://www.facebook.com/profile.php?id=100075521935175"><img src="https://thumb.tildacdn.com/tild6538-6338-4863-b663-386530306236/-/format/webp/Vector.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2" style="margin-top: 1.5%;">
+					<a target="_blank" href="https://youtube.com/@LingoSphere."><img src="https://thumb.tildacdn.com/tild3930-6465-4437-a439-663830313666/-/format/webp/Vector-2.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://twitter.com/Lingo_Sphere?t=8YVyJOW0meN-9161dQC2fw&s=09&authuser=0"><img src="twitter.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://www.tiktok.com/@lingosphere_?_t=8dKI7QwoYOU&_r=1"><img src="https://thumb.tildacdn.com/tild3164-6264-4132-b230-633735646632/-/format/webp/Vector-1.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-1">
+					
+				</div>
+			</div>
 			
 		</div>
-		<div class="col-6" style="display: flex; align-items: center; justify-content: center;">
-			<div style="width: 100%;">
-				<i style="font-size: 26px; font-weight: 600;">Зв'язатись</i>
+		<div class="col-2" style="display: flex; justify-content: center; align-items: bottom; height: 24vh;">
+			<img src="languages.png" style="width: 72px; height: 72px; margin-top: 35%">
+			<span style="font-size: 25px; font-weight: 510; margin-top: 8.7%; position: absolute;"><b style="color: #ff8300;">Lingo</b><b style="color: #b1ef16;">Sphere</b></span>
+		</div>
+		<div class="col-5" style="display: flex; justify-content: center; padding-top: 6.2%;">
+			<span style="font-size: 25px; font-weight: 510; margin-top: -3.2%; position: absolute; text-decoration: underline; color: #000000b5;">Зв'язатись:</span>
+			<div class="row">
+				<div class="col-1">
+
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://t.me/+380680318631"><img src="https://thumb.tildacdn.com/tild6330-6665-4431-a434-306666383363/-/format/webp/Group_255.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://drive.google.com/file/d/1S6JxCp2OH1B7En19OvflfBxjQCQqBxAF/view?usp=sharing"><img src="viber.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2" style="margin-top: -1.5%; margin-right: 5px;">
+					<a target="_blank" href="tel:+380680318631"><img src="phone.png" style="width: 65px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="https://drive.google.com/file/d/1SOrn2aU_PvzcDlX7UK5XRoxqvStnihxP/view?usp=sharing"><img src="https://thumb.tildacdn.com/tild3035-6236-4139-a461-373131653534/-/resize/72x/-/format/webp/icons8-whatsapp-480.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-2">
+					<a target="_blank" href="mailto:Ling0Sphere@gmail.com"><img src="https://thumb.tildacdn.com/tild3035-6464-4630-b338-653630626233/-/resize/72x/-/format/webp/Gmail_.png" style="width: 50px;"></a>
+				</div>
+				<div class="col-1">
+					
+				</div>
 			</div>
-			 <p><img src="tg.png" style="width: 50px;"><img src="viber.png" style="width: 50px;"></p>
-			<p><img src="whatsapp.png" style="width: 50px;"><img src="gmail.png" style="width: 50px;"></p>
+			
 		</div>
 	</div>
- -->
 </footer>
 
 	
